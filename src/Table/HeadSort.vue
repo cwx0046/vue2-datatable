@@ -1,6 +1,6 @@
 <template>
-  <a href="#" @click.prevent="handleClick" name="HeadSort">
-    <i :class="cls"></i>
+  <a href="#" @click.prevent="handleClick" name="HeadSort" :class="clsTextStyle">
+    <font-awesome-icon :icon="cls"></font-awesome-icon>
   </a>
 </template>
 <script>
@@ -19,13 +19,17 @@ export default {
   computed: {
     cls () {
       const { order } = this
-      return [
-        'fa',
-        { 'fa-sort text-muted': !order,
-          'fa-sort-up': order === 'asc',
-          'fa-sort-down': order === 'desc'
-        }
-      ]
+      if (!order) {
+        return 'sort'
+      } else if (order === 'asc') {
+        return 'sort-up'
+      } else if (order === 'desc') {
+        return 'sort-down'
+      }
+    },
+    clsTextStyle () {
+      const { order } = this
+      return !order ? 'text-muted': ''
     }
   },
   watch: {
