@@ -45,7 +45,7 @@ export default {
     handleClick () {
       const { query, order } = this
       query.sort = this.field
-      query.order = this.order = order === 'desc' ? 'asc' : 'desc'
+      query.order = this.order = order === 'asc' ? 'desc' : 'asc'
     }
   }
 }
