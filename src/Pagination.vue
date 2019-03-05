@@ -10,7 +10,7 @@
         {{ i }}
       </a>
       <a v-else class="page-link">
-        <i class="fa fa-ellipsis-h"></i>
+        <font-awesome-icon icon="ellipsis-h"></font-awesome-icon>
       </a>
     </li>
     <li v-if="!isLastPage" class="page-item" @click="turnPage(1)">
